@@ -2,7 +2,7 @@
 /home/robbin/.local/bin/mise activate fish | source
 
 # brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+/home/linuxbrew/.linuxbrew/bin/brew shellenv fish | source
 
 # bun
 set -x BUN_INSTALL "$HOME/.bun"
