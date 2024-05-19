@@ -1,0 +1,18 @@
+profile docked-home {
+  output "Dell Inc. DELL U2719D J8F1KS2" enable mode 2560x1440@59.951Hz position 0,0
+  output eDP-1 enable position 2560,0
+}
+
+profile docked-betty {
+  output "AOC Q2790 GQMJ4HA000065" enable mode 2560x1440@59.951Hz position 0,0
+  output eDP-1 enable position 2560,0
+}
+
+profile clamshell {
+  output HDMI-A-1 enable
+  output eDP-1 disable
+}
+
+profile laptop {
+  output eDP-1 enable
+}
