@@ -1,0 +1,5 @@
+[tools]
+neovim = "stable"
+gleam = "latest"
+erlang = "latest"
+elixir = "1.16"
