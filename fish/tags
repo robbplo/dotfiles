@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/robbinploeger/.config/fish/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20211017.0/
+BASH	functions/__bass.py	/^BASH = 'bash'$/;"	v
+FISH_READONLY	functions/__bass.py	/^FISH_READONLY = [$/;"	v
+IGNORED	functions/__bass.py	/^IGNORED = [$/;"	v
+comment	functions/__bass.py	/^def comment(string):$/;"	f
+escape	functions/__bass.py	/^def escape(string):$/;"	f
+escape_identifier	functions/__bass.py	/^def escape_identifier(word):$/;"	f
+gen_script	functions/__bass.py	/^def gen_script():$/;"	f
+ignored	functions/__bass.py	/^def ignored(name):$/;"	f
+script_file	functions/__bass.py	/^script_file = os.fdopen(3, 'w')$/;"	v
