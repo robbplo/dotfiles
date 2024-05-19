@@ -105,9 +105,7 @@ return require('packer').startup(function(use)
   ---- Go templ
   use "joerdav/templ.vim"
 
-  ---- Gleam
-  use "gleam-lang/gleam.vim"
-
+  ---- Scheme
   use "gpanders/nvim-parinfer"
 
   if (packer_bootstrapped) then
