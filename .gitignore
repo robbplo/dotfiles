@@ -1,0 +1,11 @@
+*
+*/
+!.gitignore
+!kitty
+!kitty/**
+!hypr
+!hypr/**
+!wlogout
+!wlogout/**
+!fish
+!fish/**
