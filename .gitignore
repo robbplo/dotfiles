@@ -1,6 +1,7 @@
 *
 */
 !.gitignore
+
 !ags
 !ags/**
 !fish
@@ -17,6 +18,8 @@
 !mise/**
 !nvim
 !nvim/**
+!sway
+!sway/**
 !wlogout
 !wlogout/**
 
