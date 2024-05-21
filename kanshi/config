@@ -4,12 +4,17 @@ profile docked-home {
 }
 
 profile docked-betty {
-  output "AOC Q2790 GQMJ4HA000065" enable mode 2560x1440@59.951Hz position 0,0
+  output DP-1 enable mode 2560x1440@59.951Hz position 0,0
   output eDP-1 enable position 2560,0
 }
 
 profile clamshell {
   output HDMI-A-1 enable
+  output eDP-1 disable
+}
+
+profile clamshell-2 {
+  output DP-1 enable
   output eDP-1 disable
 }
 
