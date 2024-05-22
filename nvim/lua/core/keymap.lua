@@ -18,8 +18,6 @@ vim.g.mapleader = " "
 nmap('<leader>p', '<cmd>PackerSync<cr>')
 ---- Copy to clipboard
 map('<leader>y', '"+y')
----- Quick save
-nmap('<leader>w', '<cmd>w<cr>')
 ---- Copy current filename to clipboard
 nmap('<leader>cf', '<cmd>let @+=@%<cr>')
 
