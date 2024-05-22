@@ -1,28 +1,20 @@
-# mise-en-place
+### Run that shit
 /home/robbin/.local/bin/mise activate fish | source
-
-# brew
 /home/linuxbrew/.linuxbrew/bin/brew shellenv fish | source
-
-# bun
-set -x BUN_INSTALL "$HOME/.bun"
-#set -x PATH $BUN_INSTALL/bin $PATH
-
-# global variables
-set -Ux EDITOR (which nvim)
-set -ga XDG_DATA_DIRS $HOME/.nix-profile/share
-
+source < /home/robbin/.opam/opam-init/init.fish
 
 # Abbreviations
 ## Navigation
 abbr -a -- cc cd\ \(find\ \~/\ -type\ d\ -regex\ \'^\[^\\.\]+\$\'\ \|\ fzf\)
-abbr -a -- p cd\ \(find\ \~/projects\ -maxdepth\ 2\ -type\ d\ -regex\ \'^\[^\\.\]+\$\'\ \|\ fzf\)
 abbr -a -- cf 'cd (find ~/.config -maxdepth 1 -type d | fzf) && nvim'
 
 ## Git
 abbr -a -- ga 'git add'
 abbr -a -- gc 'git commit'
+abbr -a -- gcm 'git commit -m'
 abbr -a -- gcam 'git commit -am'
+abbr -a -- gcmm 'git commit --amend'
+abbr -a -- gcamm 'git commit -a --amend'
 abbr -a -- gco 'git checkout'
 abbr -a -- gcp 'git cherry-pick'
 abbr -a -- gm 'git merge'
@@ -37,12 +29,11 @@ abbr -a -- doco docker-compose
 abbr -a -- vim nvim
 
 ## Utility
-abbr -a -- a 'wl-paste >'
+abbr -a -- p 'wl-paste'
+abbr -a -- c 'wl-copy'
 abbr -a -- yt 'youtube-dl -x --audio-format mp3'
 abbr -a -- mixwatch inotifywait\ -rmq\ --include\ \'\\.\(exs\?\|lua\)\$\'\ -e\ modify\ .\ \|\ mix\ test\ --stale\ --listen-on-stdin
 
-# opam configuration
-source /home/robbin/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
