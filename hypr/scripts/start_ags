@@ -1,0 +1,3 @@
+#!/usr/bin/fish
+pkill ags-wrapped
+ags --config /home/robbin/src/AylurDotfiles/ags/config.js
