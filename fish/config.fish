@@ -34,7 +34,4 @@ abbr -a -- c 'wl-copy'
 abbr -a -- yt 'youtube-dl -x --audio-format mp3'
 abbr -a -- mixwatch inotifywait\ -rmq\ --include\ \'\\.\(exs\?\|lua\)\$\'\ -e\ modify\ .\ \|\ mix\ test\ --stale\ --listen-on-stdin
 
-
-# bun
 set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
