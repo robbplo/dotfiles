@@ -4,10 +4,6 @@
 source < /home/robbin/.opam/opam-init/init.fish
 
 # Abbreviations
-## Navigation
-abbr -a -- cc cd\ \(find\ \~/\ -type\ d\ -regex\ \'^\[^\\.\]+\$\'\ \|\ fzf\)
-abbr -a -- cf 'cd (find ~/.config -maxdepth 1 -type d | fzf) && nvim'
-
 ## Git
 abbr -a -- ga 'git add'
 abbr -a -- gc 'git commit'
@@ -26,12 +22,10 @@ abbr -a -- pr 'gh pr checkout'
 abbr -a -- sail 'bash vendor/bin/sail'
 abbr -a -- art 'bash vendor/bin/sail artisan'
 abbr -a -- doco docker-compose
-abbr -a -- vim nvim
 
 ## Utility
-abbr -a -- p 'wl-paste'
-abbr -a -- c 'wl-copy'
-abbr -a -- yt 'youtube-dl -x --audio-format mp3'
+abbr -a -- paste 'wl-paste'
+abbr -a -- copy 'wl-copy'
 abbr -a -- mixwatch inotifywait\ -rmq\ --include\ \'\\.\(exs\?\|lua\)\$\'\ -e\ modify\ .\ \|\ mix\ test\ --stale\ --listen-on-stdin
 
 set --export BUN_INSTALL "$HOME/.bun"
