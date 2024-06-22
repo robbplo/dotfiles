@@ -25,7 +25,11 @@ abbr -a -- doco docker-compose
 
 ## Utility
 abbr -a -- paste 'wl-paste'
+abbr -a -- p 'wl-paste'
 abbr -a -- copy 'wl-copy'
+abbr -a -- c 'wl-copy'
 abbr -a -- mixwatch inotifywait\ -rmq\ --include\ \'\\.\(exs\?\|lua\)\$\'\ -e\ modify\ .\ \|\ mix\ test\ --stale\ --listen-on-stdin
+abbr -a -- startags 'hyprctl dispatch exec /home/robbin/.config/hypr/scripts/start_ags'
+abbr -a -- hyx hyprctl dispatch exec --
 
 set --export BUN_INSTALL "$HOME/.bun"
