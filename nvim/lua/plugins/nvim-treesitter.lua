@@ -35,7 +35,10 @@ nvim_treesitter.setup {
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
   highlight = { enable = true },
-  indent = { enable = true },
+  indent = {
+    enable = true,
+    disable = { 'gdscript' }
+  },
   textobjects = {
     select = {
       enable = true,

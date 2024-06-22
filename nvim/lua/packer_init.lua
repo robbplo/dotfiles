@@ -41,6 +41,12 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- Debugger
+  use 'mfussenegger/nvim-dap'
+  use 'nvim-neotest/nvim-nio'
+  use 'rcarriga/nvim-dap-ui'
+  use 'jay-babu/mason-nvim-dap.nvim'
+
   -- File explorer
   use "lambdalisue/fern.vim"
 
@@ -109,6 +115,9 @@ return require('packer').startup(function(use)
 
   ---- Scheme
   use "gpanders/nvim-parinfer"
+
+  ---- GDscript
+  use "habamax/vim-godot"
 
   if (packer_bootstrapped) then
     require('packer').sync()
