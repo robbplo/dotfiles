@@ -1,3 +1,4 @@
 #!/usr/bin/fish
 pkill ags-wrapped
+/home/robbin/.config/hypr/scripts/clamshell
 ags --config /home/robbin/src/AylurDotfiles/ags/config.js
