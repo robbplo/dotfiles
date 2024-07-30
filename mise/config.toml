@@ -2,4 +2,4 @@
 neovim = "stable"
 gleam = "latest"
 erlang = "latest"
-elixir = "latest"
+elixir = "1.17"

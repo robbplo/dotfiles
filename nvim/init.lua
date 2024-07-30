@@ -1,17 +1,14 @@
 require 'packer_init'
-require 'core.autocmds'
-require 'core.colors'
-require 'core.options'
-require 'core.keymap'
-require 'plugins.barbar'
-require 'plugins.debugger'
-require 'plugins.gitsigns'
-require 'plugins.godot'
-require 'plugins.lualine'
-require 'plugins.indent-blankline'
-require 'plugins.nvim-cmp'
-require 'plugins.nvim-lspconfig'
-require 'plugins.nvim-telescope'
-require 'plugins.nvim-treesitter'
-require 'plugins.oil'
-require 'plugins.trouble'
+
+-- require everything from ~/.config/nvim/lua
+local base_path = vim.fn.stdpath('config') .. '/lua'
+local scan = require 'plenary.scandir'
+local files = scan.scan_dir(base_path, { depth = 5, add_dirs = false })
+
+for _, file in ipairs(files) do
+  local module = file:match('/lua/(.*)%.lua')
+  if module then
+    local module_path = module:gsub('/', '.')
+    require(module_path)
+  end
+end

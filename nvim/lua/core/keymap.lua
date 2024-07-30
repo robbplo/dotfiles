@@ -20,9 +20,11 @@ end
 vim.g.mapleader = " "
 
 -- General
-nmap('<leader>p', cmd('PackerSync'))
+nmap('<leader>P', cmd('PackerSync'))
 ---- Copy to clipboard
 map('<leader>y', '"+y')
+---- Paste from clipboard
+map('<leader>p', '"+P')
 ---- Copy current filename to clipboard
 nmap('<leader>cf', cmd('let @+=@%'))
 
