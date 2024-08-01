@@ -1,59 +1,46 @@
-#!/usr/bin/ags -c
+import GLib from "gi://GLib"
 
-import Gdk from "gi://Gdk";
-import BarWindow from "./modules/bar.js";
+const main = "/tmp/asztal/main.js"
+const entry = `${App.configDir}/main.ts`
+const bundler = GLib.getenv("AGS_BUNDLER") || "bun"
 
-/**
- * @param {import('types/@girs/gtk-3.0/gtk-3.0').Gtk.Window[]} windows
- */
-function addWindows(windows) {
-  windows.forEach(win => App.addWindow(win));
+const v = {
+    ags: pkg.version?.split(".").map(Number) || [],
+    expect: [1, 8, 1],
 }
 
-globalThis.monitorCounter = 0;
+try {
+    switch (bundler) {
+        case "bun": await Utils.execAsync([
+            "bun", "build", entry,
+            "--outfile", main,
+            "--external", "resource://*",
+            "--external", "gi://*",
+            "--external", "file://*",
+        ]); break
 
-globalThis.toggleBars = () => {
-  App.windows.forEach(win => {
-    if(win.name?.startsWith("bar")) {
-      App.toggleWindow(win.name);
+        case "esbuild": await Utils.execAsync([
+            "esbuild", "--bundle", entry,
+            "--format=esm",
+            `--outfile=${main}`,
+            "--external:resource://*",
+            "--external:gi://*",
+            "--external:file://*",
+        ]); break
+
+        default:
+            throw `"${bundler}" is not a valid bundler`
     }
-  });
-};
 
-/**
- * @param { Gdk.Monitor } monitor
- */
-function addMonitorWindows(monitor) {
-  addWindows([
-    BarWindow(monitor),
-  ]);
-  globalThis.monitorCounter++;
-}
-
-function addMonitorListeners() {
-  const display = Gdk.Display.get_default();
-  for (let m = 0;  m < (display?.get_n_monitors() ?? 0);  m++) {
-    const monitor = display?.get_monitor(m);
-    if (monitor != null) {
-      addMonitorWindows(monitor);
+    if (v.ags[1] < v.expect[1] || v.ags[2] < v.expect[2]) {
+        print(`my config needs at least v${v.expect.join(".")}, yours is v${v.ags.join(".")}`)
+        App.quit()
     }
-  }
-  display?.connect("monitor-added", (_disp, monitor) => {
-    addMonitorWindows(monitor);
-  });
 
-  display?.connect("monitor-removed", (_disp, monitor) => {
-    App.windows.forEach(win => {
-      // @ts-ignore
-      if(win.gdkmonitor === monitor) App.removeWindow(win);
-    });
-  });
+    await import(`file://${main}`)
+} catch (error) {
+    console.error(error)
+    App.quit()
 }
-
-addMonitorListeners();
-
-App.config({
-  style: "./style.css",
-})
 
 export { }
